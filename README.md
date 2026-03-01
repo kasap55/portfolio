@@ -164,3 +164,6 @@ MVPで作る機能
 
 # 画面遷移図
 Figma：https://www.figma.com/design/wwDzYQeqADMT7StrNEJWIM/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=YDtCXXC7a8pUBgwv-0
+
+# 画面遷移図
+Gyazo：https://gyazo.com/4e2e450c97d096cac7b99097cda8207e
