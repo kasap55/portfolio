@@ -163,4 +163,4 @@ MVPで作る機能
 •	Docker：環境差を減らすため
 
 # 画面遷移図
-Figma：https://www.figma.com/design/wwDzYQeqADMT7StrNEJWIM/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=5ntWUfUhsjEJuHJL-0
+Figma：https://www.figma.com/design/wwDzYQeqADMT7StrNEJWIM/%E7%84%A1%E9%A1%8C?node-id=0-1&p=f&t=YDtCXXC7a8pUBgwv-0
