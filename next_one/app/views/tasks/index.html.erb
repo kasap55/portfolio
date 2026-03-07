@@ -18,7 +18,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li>
+    <li style="<%= 'color:red;' if task.due_on <= Date.today + 1 %>">
       <strong><%= link_to task.title, task_path(task) %></strong>
       （締切: <%= task.due_on %> / あと <%= (task.due_on - Date.today).to_i %> 日）
       <br>
