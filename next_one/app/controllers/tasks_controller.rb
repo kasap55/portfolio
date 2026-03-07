@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = current_user.tasks.where(is_done: false).order(:due_on)
+    @today_task = @tasks.first
   end
 
   def new
