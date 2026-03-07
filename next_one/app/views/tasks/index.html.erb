@@ -19,7 +19,7 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      <strong><%= task.title %></strong>
+      <strong><%= link_to task.title, task_path(task) %></strong>
       （締切: <%= task.due_on %> / あと <%= (task.due_on - Date.today).to_i %> 日）
       <br>
       <%= task.memo %>

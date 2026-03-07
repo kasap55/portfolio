@@ -7,6 +7,10 @@ class TasksController < ApplicationController
     @completed_tasks = current_user.tasks.where(is_done: true).order(updated_at: :desc)
   end
 
+  def show
+    @task = current_user.tasks.find(params[:id])
+  end
+
   def new
     @task = Task.new
   end
