@@ -31,4 +31,21 @@
   <% end %>
 </ul>
 
+<h2>完了済みタスク</h2>
+
+<% if @completed_tasks.present? %>
+  <ul>
+    <% @completed_tasks.each do |task| %>
+      <li>
+        <strong><%= task.title %></strong>
+        （締切: <%= task.due_on %>）
+        <br>
+        <%= task.memo %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>完了済みタスクはありません</p>
+<% end %>
+
 <%= link_to "トップページへ戻る", root_path %>
