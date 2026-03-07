@@ -1,3 +1,17 @@
+<h2>今日やるべき1件</h2>
+
+<% if @today_task.present? %>
+  <p>
+    <strong><%= @today_task.title %></strong><br>
+    締切: <%= @today_task.due_on %><br>
+    <%= @today_task.memo %>
+  </p>
+<% else %>
+  <p>未完了タスクはありません</p>
+<% end %>
+
+<hr>
+
 <h1>タスク一覧</h1>
 
 <%= link_to "タスク新規作成", new_task_path %>
