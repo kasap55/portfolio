@@ -25,7 +25,7 @@
       <%= task.memo %>
       <br>
 
-      <%= button_to "完了", task_path(task), method: :patch %>
+      <%= button_to (task.is_done ? "未完了に戻す" : "完了"), toggle_status_task_path(task), method: :patch %>
 
     </li>
   <% end %>
