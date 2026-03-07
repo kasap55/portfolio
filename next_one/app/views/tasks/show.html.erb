@@ -25,4 +25,7 @@
 </p>
 
 <%= link_to "編集", edit_task_path(@task) %>
+
+<%= button_to "削除", task_path(@task), method: :delete, data: { turbo_confirm: "本当に削除しますか？" } %>
+
 <%= link_to "タスク一覧へ戻る", tasks_path %>
