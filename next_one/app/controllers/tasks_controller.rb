@@ -39,6 +39,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def toggle_status
+    @task = current_user.tasks.find(params[:id])
+    @task.update(is_done: !@task.is_done)
+    redirect_to tasks_path
+  end
+
   def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy

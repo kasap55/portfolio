@@ -18,14 +18,14 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li>
+    <li style="<%= 'color:red;' if task.due_on <= Date.today + 1 %>">
       <strong><%= link_to task.title, task_path(task) %></strong>
       （締切: <%= task.due_on %> / あと <%= (task.due_on - Date.today).to_i %> 日）
       <br>
       <%= task.memo %>
       <br>
 
-      <%= button_to "完了", task_path(task), method: :patch %>
+      <%= button_to (task.is_done ? "未完了に戻す" : "完了"), toggle_status_task_path(task), method: :patch %>
 
     </li>
   <% end %>
