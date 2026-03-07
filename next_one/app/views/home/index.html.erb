@@ -1,2 +1,10 @@
 <h1>NextOne</h1>
 <p>今日やるべき1件を迷わず決めるタスク管理アプリ</p>
+
+<% if user_signed_in? %>
+  <p>ログイン中: <%= current_user.email %></p>
+  <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+<% else %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <%= link_to "ログイン", new_user_session_path %>
+<% end %>
