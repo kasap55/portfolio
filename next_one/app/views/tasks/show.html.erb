@@ -1,0 +1,27 @@
+<h1>タスク詳細</h1>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>締切日:</strong>
+  <%= @task.due_on %>
+</p>
+
+<p>
+  <strong>メモ:</strong><br>
+  <%= @task.memo %>
+</p>
+
+<p>
+  <strong>状態:</strong>
+  <% if @task.is_done %>
+    完了
+  <% else %>
+    未完了
+  <% end %>
+</p>
+
+<%= link_to "タスク一覧へ戻る", tasks_path %>
