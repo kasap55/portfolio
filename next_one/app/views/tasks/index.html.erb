@@ -1,0 +1,16 @@
+<h1>タスク一覧</h1>
+
+<%= link_to "タスク新規作成", new_task_path %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <strong><%= task.title %></strong>
+      （締切: <%= task.due_on %>）
+      <br>
+      <%= task.memo %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "トップページへ戻る", root_path %>
