@@ -11,6 +11,10 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
   end
 
+  def edit
+    @task = current_user.tasks.find(params[:id])
+  end
+
   def new
     @task = Task.new
   end
@@ -27,8 +31,12 @@ class TasksController < ApplicationController
 
   def update
     @task = current_user.tasks.find(params[:id])
-    @task.update(is_done: true)
-    redirect_to tasks_path
+
+    if @task.update(task_params)
+      redirect_to task_path(@task), notice: "タスクを更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
