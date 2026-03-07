@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   def index
     @tasks = current_user.tasks.where(is_done: false).order(:due_on)
     @today_task = @tasks.first
+    @completed_tasks = current_user.tasks.where(is_done: true).order(updated_at: :desc)
   end
 
   def new
