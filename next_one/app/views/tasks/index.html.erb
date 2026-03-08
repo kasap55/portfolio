@@ -7,7 +7,7 @@
     <%= @today_task.memo %>
   </p>
 <% else %>
-  <p>未完了タスクはありません</p>
+  <p>今日やるべきタスクはありません</p>
 <% end %>
 
 <hr>
@@ -31,6 +31,23 @@
   <% end %>
 </ul>
 
+<h2>期限切れタスク</h2>
+
+<% if @overdue_tasks.present? %>
+  <ul>
+    <% @overdue_tasks.each do |task| %>
+      <li>
+        <strong><%= link_to task.title, task_path(task) %></strong>
+        （締切: <%= task.due_on %> / 期限切れ）
+        <br>
+        <%= task.memo %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>期限切れタスクはありません</p>
+<% end %>
+
 <h2>完了済みタスク</h2>
 
 <% if @completed_tasks.present? %>
@@ -38,7 +55,7 @@
     <% @completed_tasks.each do |task| %>
       <li>
         <strong><%= task.title %></strong>
-        （締切: <%= task.due_on %> / あと <%= (task.due_on - Date.today).to_i %> 日）
+        （締切: <%= task.due_on %>）
         <br>
         <%= task.memo %>
       </li>
