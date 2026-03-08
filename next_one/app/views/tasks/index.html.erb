@@ -41,6 +41,9 @@
         （締切: <%= task.due_on %> / 期限切れ）
         <br>
         <%= task.memo %>
+        <br>
+
+        <%= button_to "完了", toggle_status_task_path(task), method: :patch %>
       </li>
     <% end %>
   </ul>
