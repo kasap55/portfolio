@@ -18,3 +18,16 @@ ja:
       not_saved:
         one: "1件のエラーが発生したため保存できませんでした"
         other: "%{count}件のエラーが発生したため保存できませんでした"
+
+  devise:
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    registrations:
+      signed_up: "アカウント登録が完了しました。"
+    failure:
+      invalid: "メールアドレスまたはパスワードが違います。"
+      not_found_in_database: "メールアドレスまたはパスワードが違います。"
+
+  helpers:
+    minimum_password_length: "%{count}文字以上で入力してください"

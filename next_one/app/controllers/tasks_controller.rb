@@ -2,8 +2,9 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = current_user.tasks.where(is_done: false).order(:due_on)
+    @tasks = current_user.tasks.where(is_done: false).where("due_on >= ?", Date.today).order(:due_on)
     @today_task = @tasks.first
+    @overdue_tasks = current_user.tasks.where(is_done: false).where("due_on < ?", Date.today).order(:due_on)
     @completed_tasks = current_user.tasks.where(is_done: true).order(updated_at: :desc)
   end
 
